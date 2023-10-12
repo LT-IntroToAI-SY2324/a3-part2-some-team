@@ -10,6 +10,8 @@ guesses = 0 # counts amount of guesses the player has given
 give = 0 # counts amount of times the player has given up
 game = "waiting" # takes in input for selected game
 limit = 0 # Limit of number player chooses
+inp = 0 # player input for guess my number
+choice = "yes" # for higher or lower
 
 import random
 
@@ -28,18 +30,18 @@ if begin == "yes":
         limit = input("How high should I count to?" )
         guess = random.randint(limit)
         while num != end:
-           input('What do you think is the number? ')
-           if input == "Give up":
+           inp = input('What do you think is the number? ')
+           if inp == "Give up":
                num = end
                give + 1
-           if input > guess: # If ans is to high
+           if inp > guess: # If ans is to high
               print("To high :(")
-           elif input < guess: # If ans is to low
+           elif inp < guess: # If ans is to low
               print("To low :(")
            else: # Got it correct
              print("You won! :)")
              wins + 1
-             input('Do you want to play again? ')
+             begin = input('Do you want to play again? ')
              if input == "yes":
                 num = num
              else:
@@ -48,9 +50,9 @@ if begin == "yes":
 
     elif game == "Higher or lower": # Higher or lower code
        print("Lets play higher or lower")
-       input('Would you like to play or I play? ("Player" for you, "Com" for the computer) ')
-       if input == "Player":
-          input('What range do you want me to pick from 0-')
+       choice = input('Would you like to play or I play? ("Player" for you, "Com" for the computer) ')
+       if choice == "Player":
+          limit = input('What range do you want me to pick from 0-')
           rand = random.randint(input)
           while num != num:
              input('Guess a number ')
@@ -62,7 +64,7 @@ if begin == "yes":
                 print("you got it!")
                 wins + 1
        elif input == "Com":
-          input('What range are you picking from 0-')
+          limit = input('What range are you picking from 0-')
           rand = random.randint(input)
           com_guess = rand
           while num != num:
