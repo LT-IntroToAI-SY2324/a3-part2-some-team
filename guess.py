@@ -9,7 +9,7 @@ num = 0 # answer given by player
 guesses = 0 # counts amount of guesses the player has given
 give = 0 # counts amount of times the player has given up
 game = "waiting" # takes in input for selected game
-
+limit = 0 # Limit of number player chooses
 
 import random
 
@@ -17,16 +17,16 @@ import random
 begin = input('Would you like to play? ')
 
 if begin == "yes":
-    input('Which game should we play? (Higher or lower, Guess my number, Heads or tails). (type "Give up" to end the game) Or type "Score" to see how many times you have won and amount of guesses you had ')
-    game = input
+    game = input('Which game should we play? (Higher or lower, Guess my number, Heads or tails). (type "Give up" to end the game) Or type "Score" to see how many times you have won and amount of guesses you had ')
+    
     if game == "score":
        print("Wins: " + wins)
        print("Guesses: " + guesses)
        print("Times given up: " + give)
 
     elif game == "Guess my Number": # Guess my number code
-        input("How high should I count to?" )
-        guess = random.randint(input)
+        limit = input("How high should I count to?" )
+        guess = random.randint(limit)
         while num != end:
            input('What do you think is the number? ')
            if input == "Give up":
