@@ -21,8 +21,8 @@ begin = input('Would you like to play? ')
 
 while begin == "yes":
     game = input('Which game should we play? (Higher or lower, Guess my number, Heads or tails).' 
-                 '(type "Give up" to end the game) (Type "no" to end the loop)' 
-                 '(Type "Score" to see how many times you have won and amount of guesses you had) ')
+               '(type "Give up" to end the game) (Type "no" to end the loop)' 
+               '(Type "Score" to see how many times you have won and amount of guesses you had) ')
     
     if game == "score":
        print("Wins: " + wins)
