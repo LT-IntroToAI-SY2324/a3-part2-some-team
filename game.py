@@ -56,7 +56,7 @@ while begin == "yes":
        choice = input('Would you like to play or I play? ("Player" for you, "Com" for the computer) ')
        if choice == "Player":
           limit = input('What range do you want me to pick from 0-')
-          rand = random.randint(input)
+          rand = random.randint(limit)
           while num != num:
              num = input('Guess a number ')
              if num > rand:
