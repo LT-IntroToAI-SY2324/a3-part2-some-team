@@ -33,7 +33,7 @@ while begin == "yes":
 
     elif game == "Guess my Number": # Guess my number code
         limit = input("How high should I count to?" )
-        guess = random.randint(0, limit)
+        guess = random.randint(0, int(limit))
         while num != end:
            inp = input('What do you think is the number? ')
            if inp == "Give up":
@@ -58,7 +58,7 @@ while begin == "yes":
        choice = input('Would you like to play or I play? ("Player" for you, "Com" for the computer) ')
        if choice == "Player":
           limit = input('What range do you want me to pick from 0-')
-          rand = random.randint(0, limit)
+          rand = random.randint(0, int(limit))
           while num != num:
              num = input('Guess a number ')
              if num > rand:
@@ -72,7 +72,7 @@ while begin == "yes":
           maxV = input('What range are you picking from 0-')
           
           while num != num:
-             rand = random.randint(minV, maxV)
+             rand = random.randint(int(minV), int(maxV))
              com_guess = rand
              print("Is your number " + com_guess + "?")
              input('yes or no?')
