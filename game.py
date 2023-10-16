@@ -13,6 +13,8 @@ inp = 0 # player input for guess my number
 choice = "yes" # for higher or lower
 HOrT = "waiting" # takes input for heads or tails
 endLoop = "waiting" # var. for ending the game
+minV = 0
+maxV = 0
 
 import random
 
@@ -31,7 +33,7 @@ while begin == "yes":
 
     elif game == "Guess my Number": # Guess my number code
         limit = input("How high should I count to?" )
-        guess = random.randint(limit)
+        guess = random.randint(0, limit)
         while num != end:
            inp = input('What do you think is the number? ')
            if inp == "Give up":
@@ -56,7 +58,7 @@ while begin == "yes":
        choice = input('Would you like to play or I play? ("Player" for you, "Com" for the computer) ')
        if choice == "Player":
           limit = input('What range do you want me to pick from 0-')
-          rand = random.randint(limit)
+          rand = random.randint(0, limit)
           while num != num:
              num = input('Guess a number ')
              if num > rand:
@@ -67,18 +69,19 @@ while begin == "yes":
                 print("you got it!")
                 wins + 1
        elif choice == "Com":
-          limit = input('What range are you picking from 0-')
-          rand = random.randint(limit)
-          com_guess = rand
+          maxV = input('What range are you picking from 0-')
+          
           while num != num:
+             rand = random.randint(minV, maxV)
+             com_guess = rand
              print("Is your number " + com_guess + "?")
              input('yes or no?')
              if choice == "no": # Com guesses wrong
                 choice = input('Is it higher or lower? ')
                 if choice == "higher": # To high
-                   com_guess = random.randint()
+                   minV = com_guess
                 elif choice == "lower": # To low
-                   com_guess = random.randint(com_guess)
+                   maxV = com_guess
              if choice == "yes": # Com guesses correctly
                 print("Yay!")
                 endLoop = input('Do you want to play again? ')
@@ -94,7 +97,7 @@ while begin == "yes":
     elif game == "Heads or tails": # Heads or tails code
         print("Lets play heads or tails")
         while num != end:
-           flip = random.randrange(1) # Decides heads or tails
+           flip = random.randrange(0, 1) # Decides heads or tails
            HOrT = input('Heads or tails? (1 = heads and 0 = tails) ')
            if HOrT == "Give up":
               num = end
