@@ -42,13 +42,13 @@ while begin == "yes":
                give + 1
            if inp > guess: # If ans is to high
               print("To high :(")
-              guesses =+ 1
+              guesses = guesses + 1
            elif inp < guess: # If ans is to low
               print("To low :(")
-              guesses =+ 1
+              guesses = guesses + 1
            else: # Got it correct
              print("You won! :)")
-             wins + 1
+             wins = wins + 1
              begin = input('Do you want to play again? ')
              if input == "yes":
                 num = num
