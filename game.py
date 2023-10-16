@@ -42,10 +42,10 @@ while begin == "yes":
                give + 1
            if inp > guess: # If ans is to high
               print("To high :(")
-              guess + 1
+              guesses + 1
            elif inp < guess: # If ans is to low
               print("To low :(")
-              guess + 1
+              guesses + 1
            else: # Got it correct
              print("You won! :)")
              wins + 1
