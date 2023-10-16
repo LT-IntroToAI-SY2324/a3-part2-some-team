@@ -13,8 +13,8 @@ inp = 0 # player input for guess my number
 choice = "yes" # for higher or lower
 HOrT = "waiting" # takes input for heads or tails
 endLoop = "waiting" # var. for ending the game
-minV = 0
-maxV = 0
+minV = 0 # min value
+maxV = 0 # max value
 
 import random
 
@@ -32,10 +32,11 @@ while begin == "yes":
        print("Times given up: " + give)
 
     elif game == "Guess my Number": # Guess my number code
-        limit = input("How high should I count to?" )
+        limit = input("How high should I count to? " )
         guess = random.randint(0, int(limit))
         while num != end:
            inp = input('What do you think is the number? ')
+           inp = int(inp)
            if inp == "Give up":
                num = end
                give + 1
@@ -61,6 +62,7 @@ while begin == "yes":
           rand = random.randint(0, int(limit))
           while num != num:
              num = input('Guess a number ')
+             num = int(num)
              if num > rand:
                 print("To high")
              if num < rand:
