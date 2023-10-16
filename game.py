@@ -71,10 +71,10 @@ while begin == "yes":
                 print("To low")
              else:
                 print("you got it!")
-                wins + 1
+                wins = wins + 1
        elif choice == "Com":
           maxV = input('What range are you picking from 0-')
-          
+          maxV = int(maxV)
           while num != num:
              rand = random.randint(int(minV), int(maxV))
              com_guess = rand
