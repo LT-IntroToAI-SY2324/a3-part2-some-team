@@ -31,7 +31,7 @@ while begin == "yes":
        print("Guesses: " + guesses)
        print("Times given up: " + give)
 
-    elif game == "Guess my Number": # Guess my number code
+    elif game == "Guess my number": # Guess my number code
         limit = input("How high should I count to? " )
         guess = random.randint(0, int(limit))
         while num != end:
