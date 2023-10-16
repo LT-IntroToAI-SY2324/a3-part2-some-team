@@ -26,10 +26,10 @@ while begin == "yes":
                '(type "Give up" to end the game) (Type "no" to end the loop)' 
                '(Type "Score" to see how many times you have won and amount of guesses you had) ')
     
-    if game == "score":
-       print("Wins: " + wins)
-       print("Guesses: " + guesses)
-       print("Times given up: " + give)
+    if game == "Score":
+       print("Wins: " + str(wins))
+       print("Guesses: " + str(guesses))
+       print("Times given up: " + str(give))
 
     elif game == "Guess my number": # Guess my number code
         limit = input("How high should I count to? " )
